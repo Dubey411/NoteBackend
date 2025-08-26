@@ -10,8 +10,13 @@ const app = express();
 
 // Middleware
 // app.use(cors());
-app.use(cors({ origin: "note-frontend-psi.vercel.app
-" }));
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://note-frontend-psi.vercel.app",
+  credentials: true // only if you send cookies/auth headers
+}));
+
 
 app.use(express.json());
 
