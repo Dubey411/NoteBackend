@@ -9,7 +9,9 @@ const notesRoutes = require("./routes/notes");
 const app = express();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "https://your-frontend-name.vercel.app" }));
+
 app.use(express.json());
 
 // MongoDB connection
