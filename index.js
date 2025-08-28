@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Test route
 app.get('/api/message', (req, res) => {
-  res.json({ message: 'Backend is connected 🎉' });
+  res.send("<h1>🚀 Note Backend API is running!</h1><p>Use /api/auth or /api/notes endpoints.</p>");
 });
 
 // Routes
