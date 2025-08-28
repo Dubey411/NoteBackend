@@ -9,27 +9,10 @@ const mongoose = require('mongoose');
 // module.exports = mongoose.model('User',userSchema);
 
 const userSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    // not required → Google users won’t have this
-  },
-  name: {
-    type: String,
-  },
-  googleId: {
-    type: String,
-    unique: true,
-    sparse: true, // allows multiple null values, but unique when filled
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  email: { type: String, required: true, unique: true },
+  password: { type: String },       // optional for Google login
+  name: { type: String },
+  googleId: { type: String, unique: true, sparse: true },
+  createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model("User", userSchema);
